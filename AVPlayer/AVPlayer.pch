@@ -1,0 +1,42 @@
+//
+//  AVPlayer.pch
+//  AVPlayer
+//
+//  Created by ClaudeLi on 16/4/13.
+//  Copyright © 2016年 ClaudeLi. All rights reserved.
+//
+
+#ifndef AVPlayer_pch
+#define AVPlayer_pch
+
+#import "UIColor+color.h"
+
+/* 屏幕宽高 */
+#define KScreenWidth [UIScreen mainScreen].bounds.size.width
+#define KScreenHeight [UIScreen mainScreen].bounds.size.height
+
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+
+#define KTabBarHeight 49.0f // tabBar高度
+#define KNavigatHeight  64.f // 导航栏高度
+#define KStateHeight 20.0f // 状态栏
+#define NavHeight KNavigatHeight - KStateHeight
+
+#define TableViewRowHeight 60.0f // tableView RowHight
+
+/* 坐标变量 */
+#define Frame_x_0  0.0f // 坐标 -> x
+#define Frame_y_0  0.0f //
+
+
+#ifdef DEBUG
+#define NSLog( s, ... ) NSLog( @"<%p %@:(line-%d)> %@", self, [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+
+#else
+#    define NSLog(...)
+#endif
+
+
+#define integerToString(a) [NSString stringWithFormat:@"%ld", (long)(a)]
+
+#endif /* AVPlayer_pch */
