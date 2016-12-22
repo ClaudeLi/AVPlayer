@@ -1,0 +1,509 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D31C9F021E0930E5009A0B05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D31C9F011E0930E5009A0B05 /* main.m */; };
+		D31C9F051E0930E5009A0B05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D31C9F041E0930E5009A0B05 /* AppDelegate.m */; };
+		D31C9F081E0930E5009A0B05 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D31C9F071E0930E5009A0B05 /* ViewController.m */; };
+		D31C9F0B1E0930E5009A0B05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D31C9F091E0930E5009A0B05 /* Main.storyboard */; };
+		D31C9F0E1E0930E5009A0B05 /* TTAVPlayer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D31C9F0C1E0930E5009A0B05 /* TTAVPlayer.xcdatamodeld */; };
+		D31C9F101E0930E5009A0B05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D31C9F0F1E0930E5009A0B05 /* Assets.xcassets */; };
+		D31C9F131E0930E5009A0B05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D31C9F111E0930E5009A0B05 /* LaunchScreen.storyboard */; };
+		D31C9F731E0BDD46009A0B05 /* NSString+TTPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D31C9F5F1E0BDD46009A0B05 /* NSString+TTPlayer.m */; };
+		D31C9F741E0BDD46009A0B05 /* TTAVPlayerGestureView.m in Sources */ = {isa = PBXBuildFile; fileRef = D31C9F611E0BDD46009A0B05 /* TTAVPlayerGestureView.m */; };
+		D31C9F751E0BDD46009A0B05 /* UIDevice+TTDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = D31C9F631E0BDD46009A0B05 /* UIDevice+TTDevice.m */; };
+		D31C9F761E0BDD46009A0B05 /* TTAVPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D31C9F651E0BDD46009A0B05 /* TTAVPlayer.m */; };
+		D31C9F771E0BDD46009A0B05 /* TTAVPlayerView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = D31C9F681E0BDD46009A0B05 /* TTAVPlayerView+Layout.m */; };
+		D31C9F781E0BDD46009A0B05 /* TTAVPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D31C9F6A1E0BDD46009A0B05 /* TTAVPlayerView.m */; };
+		D31C9F791E0BDD46009A0B05 /* TTAVPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D31C9F6B1E0BDD46009A0B05 /* TTAVPlayerView.xib */; };
+		D31C9F7A1E0BDD46009A0B05 /* TTPlayerLandscapeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D31C9F6D1E0BDD46009A0B05 /* TTPlayerLandscapeController.m */; };
+		D31C9F7B1E0BDD46009A0B05 /* TTPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D31C9F6F1E0BDD46009A0B05 /* TTPlayerManager.m */; };
+		D31C9F7C1E0BDD46009A0B05 /* TTPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D31C9F711E0BDD46009A0B05 /* TTPlayerViewController.m */; };
+		D31C9F7D1E0BDD46009A0B05 /* TTPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D31C9F721E0BDD46009A0B05 /* TTPlayerViewController.xib */; };
+		D31C9F801E0BDE37009A0B05 /* UIView+UIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D31C9F7F1E0BDE37009A0B05 /* UIView+UIViewController.m */; };
+		D31C9F831E0BE28F009A0B05 /* TTTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D31C9F821E0BE28F009A0B05 /* TTTabBarController.m */; };
+		D31C9F851E0BE354009A0B05 /* TestVideo.txt in Resources */ = {isa = PBXBuildFile; fileRef = D31C9F841E0BE354009A0B05 /* TestVideo.txt */; };
+		FCBD0724B4BEA7123C388699 /* libPods-TTAVPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48C18C61AFBEC693A28AFF93 /* libPods-TTAVPlayer.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		48C18C61AFBEC693A28AFF93 /* libPods-TTAVPlayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TTAVPlayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D2FDD10BC3C1452F315E34D /* Pods-TTAVPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTAVPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TTAVPlayer/Pods-TTAVPlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		91D3492866FADEDB40684A56 /* Pods-TTAVPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TTAVPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-TTAVPlayer/Pods-TTAVPlayer.release.xcconfig"; sourceTree = "<group>"; };
+		D31C9EFD1E0930E5009A0B05 /* TTAVPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTAVPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D31C9F011E0930E5009A0B05 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D31C9F031E0930E5009A0B05 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D31C9F041E0930E5009A0B05 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D31C9F061E0930E5009A0B05 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D31C9F071E0930E5009A0B05 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D31C9F0A1E0930E5009A0B05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D31C9F0D1E0930E5009A0B05 /* TTAVPlayer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TTAVPlayer.xcdatamodel; sourceTree = "<group>"; };
+		D31C9F0F1E0930E5009A0B05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D31C9F121E0930E5009A0B05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D31C9F141E0930E5009A0B05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D31C9F5E1E0BDD46009A0B05 /* NSString+TTPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TTPlayer.h"; sourceTree = "<group>"; };
+		D31C9F5F1E0BDD46009A0B05 /* NSString+TTPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TTPlayer.m"; sourceTree = "<group>"; };
+		D31C9F601E0BDD46009A0B05 /* TTAVPlayerGestureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAVPlayerGestureView.h; sourceTree = "<group>"; };
+		D31C9F611E0BDD46009A0B05 /* TTAVPlayerGestureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTAVPlayerGestureView.m; sourceTree = "<group>"; };
+		D31C9F621E0BDD46009A0B05 /* UIDevice+TTDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+TTDevice.h"; sourceTree = "<group>"; };
+		D31C9F631E0BDD46009A0B05 /* UIDevice+TTDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+TTDevice.m"; sourceTree = "<group>"; };
+		D31C9F641E0BDD46009A0B05 /* TTAVPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAVPlayer.h; sourceTree = "<group>"; };
+		D31C9F651E0BDD46009A0B05 /* TTAVPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTAVPlayer.m; sourceTree = "<group>"; };
+		D31C9F661E0BDD46009A0B05 /* TTAVPlayerSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAVPlayerSDK.h; sourceTree = "<group>"; };
+		D31C9F671E0BDD46009A0B05 /* TTAVPlayerView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TTAVPlayerView+Layout.h"; sourceTree = "<group>"; };
+		D31C9F681E0BDD46009A0B05 /* TTAVPlayerView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TTAVPlayerView+Layout.m"; sourceTree = "<group>"; };
+		D31C9F691E0BDD46009A0B05 /* TTAVPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAVPlayerView.h; sourceTree = "<group>"; };
+		D31C9F6A1E0BDD46009A0B05 /* TTAVPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTAVPlayerView.m; sourceTree = "<group>"; };
+		D31C9F6B1E0BDD46009A0B05 /* TTAVPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTAVPlayerView.xib; sourceTree = "<group>"; };
+		D31C9F6C1E0BDD46009A0B05 /* TTPlayerLandscapeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTPlayerLandscapeController.h; sourceTree = "<group>"; };
+		D31C9F6D1E0BDD46009A0B05 /* TTPlayerLandscapeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTPlayerLandscapeController.m; sourceTree = "<group>"; };
+		D31C9F6E1E0BDD46009A0B05 /* TTPlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTPlayerManager.h; sourceTree = "<group>"; };
+		D31C9F6F1E0BDD46009A0B05 /* TTPlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTPlayerManager.m; sourceTree = "<group>"; };
+		D31C9F701E0BDD46009A0B05 /* TTPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTPlayerViewController.h; sourceTree = "<group>"; };
+		D31C9F711E0BDD46009A0B05 /* TTPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTPlayerViewController.m; sourceTree = "<group>"; };
+		D31C9F721E0BDD46009A0B05 /* TTPlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTPlayerViewController.xib; sourceTree = "<group>"; };
+		D31C9F7E1E0BDE37009A0B05 /* UIView+UIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIViewController.h"; sourceTree = "<group>"; };
+		D31C9F7F1E0BDE37009A0B05 /* UIView+UIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIViewController.m"; sourceTree = "<group>"; };
+		D31C9F811E0BE28F009A0B05 /* TTTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTabBarController.h; sourceTree = "<group>"; };
+		D31C9F821E0BE28F009A0B05 /* TTTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTabBarController.m; sourceTree = "<group>"; };
+		D31C9F841E0BE354009A0B05 /* TestVideo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestVideo.txt; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D31C9EFA1E0930E5009A0B05 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCBD0724B4BEA7123C388699 /* libPods-TTAVPlayer.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		66A5375745AC0289052CFC7A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				48C18C61AFBEC693A28AFF93 /* libPods-TTAVPlayer.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B3528B187C9171570C754F47 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6D2FDD10BC3C1452F315E34D /* Pods-TTAVPlayer.debug.xcconfig */,
+				91D3492866FADEDB40684A56 /* Pods-TTAVPlayer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D31C9EF41E0930E5009A0B05 = {
+			isa = PBXGroup;
+			children = (
+				D31C9EFF1E0930E5009A0B05 /* TTAVPlayer */,
+				D31C9EFE1E0930E5009A0B05 /* Products */,
+				B3528B187C9171570C754F47 /* Pods */,
+				66A5375745AC0289052CFC7A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D31C9EFE1E0930E5009A0B05 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D31C9EFD1E0930E5009A0B05 /* TTAVPlayer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D31C9EFF1E0930E5009A0B05 /* TTAVPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				D31C9F5C1E0BDD46009A0B05 /* TTAVPlayerSDK */,
+				D31C9F031E0930E5009A0B05 /* AppDelegate.h */,
+				D31C9F041E0930E5009A0B05 /* AppDelegate.m */,
+				D31C9F061E0930E5009A0B05 /* ViewController.h */,
+				D31C9F071E0930E5009A0B05 /* ViewController.m */,
+				D31C9F841E0BE354009A0B05 /* TestVideo.txt */,
+				D31C9F811E0BE28F009A0B05 /* TTTabBarController.h */,
+				D31C9F821E0BE28F009A0B05 /* TTTabBarController.m */,
+				D31C9F091E0930E5009A0B05 /* Main.storyboard */,
+				D31C9F0F1E0930E5009A0B05 /* Assets.xcassets */,
+				D31C9F111E0930E5009A0B05 /* LaunchScreen.storyboard */,
+				D31C9F141E0930E5009A0B05 /* Info.plist */,
+				D31C9F0C1E0930E5009A0B05 /* TTAVPlayer.xcdatamodeld */,
+				D31C9F001E0930E5009A0B05 /* Supporting Files */,
+			);
+			path = TTAVPlayer;
+			sourceTree = "<group>";
+		};
+		D31C9F001E0930E5009A0B05 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D31C9F011E0930E5009A0B05 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D31C9F5C1E0BDD46009A0B05 /* TTAVPlayerSDK */ = {
+			isa = PBXGroup;
+			children = (
+				D31C9F661E0BDD46009A0B05 /* TTAVPlayerSDK.h */,
+				D31C9F5D1E0BDD46009A0B05 /* Tools */,
+				D31C9F641E0BDD46009A0B05 /* TTAVPlayer.h */,
+				D31C9F651E0BDD46009A0B05 /* TTAVPlayer.m */,
+				D31C9F691E0BDD46009A0B05 /* TTAVPlayerView.h */,
+				D31C9F6A1E0BDD46009A0B05 /* TTAVPlayerView.m */,
+				D31C9F6B1E0BDD46009A0B05 /* TTAVPlayerView.xib */,
+				D31C9F671E0BDD46009A0B05 /* TTAVPlayerView+Layout.h */,
+				D31C9F681E0BDD46009A0B05 /* TTAVPlayerView+Layout.m */,
+				D31C9F6E1E0BDD46009A0B05 /* TTPlayerManager.h */,
+				D31C9F6F1E0BDD46009A0B05 /* TTPlayerManager.m */,
+				D31C9F701E0BDD46009A0B05 /* TTPlayerViewController.h */,
+				D31C9F711E0BDD46009A0B05 /* TTPlayerViewController.m */,
+				D31C9F721E0BDD46009A0B05 /* TTPlayerViewController.xib */,
+				D31C9F6C1E0BDD46009A0B05 /* TTPlayerLandscapeController.h */,
+				D31C9F6D1E0BDD46009A0B05 /* TTPlayerLandscapeController.m */,
+			);
+			path = TTAVPlayerSDK;
+			sourceTree = "<group>";
+		};
+		D31C9F5D1E0BDD46009A0B05 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				D31C9F7E1E0BDE37009A0B05 /* UIView+UIViewController.h */,
+				D31C9F7F1E0BDE37009A0B05 /* UIView+UIViewController.m */,
+				D31C9F5E1E0BDD46009A0B05 /* NSString+TTPlayer.h */,
+				D31C9F5F1E0BDD46009A0B05 /* NSString+TTPlayer.m */,
+				D31C9F601E0BDD46009A0B05 /* TTAVPlayerGestureView.h */,
+				D31C9F611E0BDD46009A0B05 /* TTAVPlayerGestureView.m */,
+				D31C9F621E0BDD46009A0B05 /* UIDevice+TTDevice.h */,
+				D31C9F631E0BDD46009A0B05 /* UIDevice+TTDevice.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D31C9EFC1E0930E5009A0B05 /* TTAVPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D31C9F171E0930E5009A0B05 /* Build configuration list for PBXNativeTarget "TTAVPlayer" */;
+			buildPhases = (
+				DCA0264B06D7378A9C679F0D /* [CP] Check Pods Manifest.lock */,
+				D31C9EF91E0930E5009A0B05 /* Sources */,
+				D31C9EFA1E0930E5009A0B05 /* Frameworks */,
+				D31C9EFB1E0930E5009A0B05 /* Resources */,
+				DE97512C4A66B484E71F326E /* [CP] Embed Pods Frameworks */,
+				E5DBCC4257464651A0C6582D /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TTAVPlayer;
+			productName = TTAVPlayer;
+			productReference = D31C9EFD1E0930E5009A0B05 /* TTAVPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D31C9EF51E0930E5009A0B05 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = ClaudeLi;
+				TargetAttributes = {
+					D31C9EFC1E0930E5009A0B05 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = D31C9EF81E0930E5009A0B05 /* Build configuration list for PBXProject "TTAVPlayer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D31C9EF41E0930E5009A0B05;
+			productRefGroup = D31C9EFE1E0930E5009A0B05 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D31C9EFC1E0930E5009A0B05 /* TTAVPlayer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D31C9EFB1E0930E5009A0B05 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D31C9F131E0930E5009A0B05 /* LaunchScreen.storyboard in Resources */,
+				D31C9F7D1E0BDD46009A0B05 /* TTPlayerViewController.xib in Resources */,
+				D31C9F851E0BE354009A0B05 /* TestVideo.txt in Resources */,
+				D31C9F101E0930E5009A0B05 /* Assets.xcassets in Resources */,
+				D31C9F791E0BDD46009A0B05 /* TTAVPlayerView.xib in Resources */,
+				D31C9F0B1E0930E5009A0B05 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DCA0264B06D7378A9C679F0D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DE97512C4A66B484E71F326E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TTAVPlayer/Pods-TTAVPlayer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5DBCC4257464651A0C6582D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TTAVPlayer/Pods-TTAVPlayer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D31C9EF91E0930E5009A0B05 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D31C9F081E0930E5009A0B05 /* ViewController.m in Sources */,
+				D31C9F731E0BDD46009A0B05 /* NSString+TTPlayer.m in Sources */,
+				D31C9F741E0BDD46009A0B05 /* TTAVPlayerGestureView.m in Sources */,
+				D31C9F771E0BDD46009A0B05 /* TTAVPlayerView+Layout.m in Sources */,
+				D31C9F761E0BDD46009A0B05 /* TTAVPlayer.m in Sources */,
+				D31C9F801E0BDE37009A0B05 /* UIView+UIViewController.m in Sources */,
+				D31C9F831E0BE28F009A0B05 /* TTTabBarController.m in Sources */,
+				D31C9F7C1E0BDD46009A0B05 /* TTPlayerViewController.m in Sources */,
+				D31C9F051E0930E5009A0B05 /* AppDelegate.m in Sources */,
+				D31C9F021E0930E5009A0B05 /* main.m in Sources */,
+				D31C9F751E0BDD46009A0B05 /* UIDevice+TTDevice.m in Sources */,
+				D31C9F7B1E0BDD46009A0B05 /* TTPlayerManager.m in Sources */,
+				D31C9F781E0BDD46009A0B05 /* TTAVPlayerView.m in Sources */,
+				D31C9F0E1E0930E5009A0B05 /* TTAVPlayer.xcdatamodeld in Sources */,
+				D31C9F7A1E0BDD46009A0B05 /* TTPlayerLandscapeController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D31C9F091E0930E5009A0B05 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D31C9F0A1E0930E5009A0B05 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D31C9F111E0930E5009A0B05 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D31C9F121E0930E5009A0B05 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D31C9F151E0930E5009A0B05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D31C9F161E0930E5009A0B05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D31C9F181E0930E5009A0B05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D2FDD10BC3C1452F315E34D /* Pods-TTAVPlayer.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TTAVPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.claudeli.TTAVPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D31C9F191E0930E5009A0B05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91D3492866FADEDB40684A56 /* Pods-TTAVPlayer.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TTAVPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.claudeli.TTAVPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D31C9EF81E0930E5009A0B05 /* Build configuration list for PBXProject "TTAVPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D31C9F151E0930E5009A0B05 /* Debug */,
+				D31C9F161E0930E5009A0B05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D31C9F171E0930E5009A0B05 /* Build configuration list for PBXNativeTarget "TTAVPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D31C9F181E0930E5009A0B05 /* Debug */,
+				D31C9F191E0930E5009A0B05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D31C9F0C1E0930E5009A0B05 /* TTAVPlayer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D31C9F0D1E0930E5009A0B05 /* TTAVPlayer.xcdatamodel */,
+			);
+			currentVersion = D31C9F0D1E0930E5009A0B05 /* TTAVPlayer.xcdatamodel */;
+			path = TTAVPlayer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D31C9EF51E0930E5009A0B05 /* Project object */;
+}
