@@ -46,7 +46,6 @@
     //[self.player setItem:<#(TTVideoItem *)#>];
 }
 
-
 - (NSArray *)getVideoItemArray{
     // 获取测试数据Url数组
     NSString *path = [[NSBundle mainBundle] pathForResource:@"TestVideo" ofType:@"txt"];
@@ -65,6 +64,13 @@
         i++;
     }
     return [itemArray copy];
+}
+
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    if (!self.player.isFullScreen) {
+        [self.player pause];
+    }
 }
 
 - (BOOL)shouldAutorotate

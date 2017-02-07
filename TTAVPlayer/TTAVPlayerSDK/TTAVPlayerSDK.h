@@ -12,6 +12,7 @@
 #import <Masonry.h>
 #import "TTVideoItem.h"
 #import "TTPlayerViewController.h"
+#import "TTLandscapePlayerController.h"
 #import "UIView+UIViewController.h"
 
 #ifdef DEBUG

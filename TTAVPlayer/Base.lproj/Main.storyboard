@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--My-->
         <scene sceneID="S0c-5d-4Jt">
             <objects>
-                <viewController id="sn7-Mr-b6O" sceneMemberID="viewController">
+                <viewController id="sn7-Mr-b6O" customClass="MyViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c6O-NY-w8E"/>
                         <viewControllerLayoutGuide type="bottom" id="liT-gm-1hE"/>
@@ -20,15 +20,28 @@
                     <view key="view" contentMode="scaleToFill" id="SPB-ok-8ca">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcm-sP-caQ">
+                                <rect key="frame" x="149" y="318.5" width="77" height="30"/>
+                                <state key="normal" title="横屏播放器"/>
+                                <connections>
+                                    <action selector="gotoLandscapePlayer:" destination="sn7-Mr-b6O" eventType="touchUpInside" id="bvs-YN-tR3"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gcm-sP-caQ" firstAttribute="centerX" secondItem="SPB-ok-8ca" secondAttribute="centerX" id="jfj-Fy-BTE"/>
+                            <constraint firstItem="gcm-sP-caQ" firstAttribute="centerY" secondItem="SPB-ok-8ca" secondAttribute="centerY" id="l3W-PY-9Wx"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="igu-Wt-JmM"/>
+                    <tabBarItem key="tabBarItem" title="My" id="igu-Wt-JmM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zRE-sC-eWF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="116" y="-177"/>
         </scene>
-        <!--Item 1-->
+        <!--Test-->
         <scene sceneID="bf8-nD-c4N">
             <objects>
                 <viewController id="QsA-36-Hry" customClass="ViewController" sceneMemberID="viewController">
@@ -41,7 +54,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="jqI-1Y-x6S"/>
+                    <tabBarItem key="tabBarItem" title="Test" id="jqI-1Y-x6S"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NC9-Fz-NaE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

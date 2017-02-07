@@ -53,7 +53,7 @@ static void * TTAVPlayerLoadedTimeRangesContext = &TTAVPlayerLoadedTimeRangesCon
         AVAudioSession *audioSession = [AVAudioSession sharedInstance];
         [audioSession setCategory:AVAudioSessionCategoryPlayback error:&audioSessionError];
         if (audioSessionError) {
-            NSLog(@"%@", audioSessionError);
+            TTLog(@"%@", audioSessionError);
         }
         // 前后台通知
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enterForegroundNotification) name:UIApplicationWillEnterForegroundNotification object:nil];
@@ -80,7 +80,7 @@ static void * TTAVPlayerLoadedTimeRangesContext = &TTAVPlayerLoadedTimeRangesCon
 }
 
 - (void)deviceOrientChangeNotification{
-    NSLog(@"%s", __func__);
+    TTLog(@"%s", __func__);
     if (self.playerDirectionChange) {
         self.playerDirectionChange();
     }

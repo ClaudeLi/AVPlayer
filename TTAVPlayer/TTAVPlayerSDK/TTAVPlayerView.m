@@ -10,7 +10,6 @@
 #import "TTAVPlayerView+Layout.h"
 #import "TTAVPlayerSDK.h"
 #import "TTAVPlayer.h"
-#import "UIDevice+TTDevice.h"
 #import "TTAVPlayerGestureView.h"
 #import "NSString+TTPlayer.h"
 #import "TTPlayerManager.h"
@@ -333,7 +332,7 @@
             }
         }
     }
-    NSLog(@"%ld", (long)orient);
+    TTLog(@"%ld", (long)orient);
 }
 
 - (void)setChangedOrientation:(TTPlayerOrientation)orientation {
@@ -372,7 +371,7 @@
 }
 // 扫一扫
 - (IBAction)clickSweepAction:(id)sender {
-    NSLog(@"投屏");
+    TTLog(@"投屏");
 }
 // 锁屏
 - (IBAction)clickLockAction:(id)sender {
@@ -381,7 +380,7 @@
 }
 // 分享
 - (IBAction)clickShareAction:(id)sender {
-    NSLog(@"分享");
+    TTLog(@"分享");
 }
 
 // 旋转屏幕
@@ -532,7 +531,7 @@
         _lastBtn.selected = NO;
         _nextBtn.selected = NO;
     }
-    NSLog(@"_index = %ld", (long)_index);
+    TTLog(@"_index = %ld", (long)_index);
     if (_index < _itemArray.count) {
         if (self.didSelectIndex) {
             self.didSelectIndex(_index);
@@ -545,7 +544,7 @@
 #pragma mark -
 #pragma mark -- dealloc --
 - (void)dealloc{
-    NSLog(@"%s", __func__);
+    TTLog(@"%s", __func__);
     if (_player) {
         [_player cancleLoading];
     }

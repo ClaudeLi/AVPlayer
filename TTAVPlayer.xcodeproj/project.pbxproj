@@ -30,8 +30,8 @@
 		D3961A281E49B65F00725225 /* NSObject+TTKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = D3961A1F1E49B65F00725225 /* NSObject+TTKVO.m */; };
 		D3961A291E49B65F00725225 /* NSString+TTPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D3961A211E49B65F00725225 /* NSString+TTPlayer.m */; };
 		D3961A2A1E49B65F00725225 /* TTAVPlayerGestureView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3961A231E49B65F00725225 /* TTAVPlayerGestureView.m */; };
-		D3961A2B1E49B65F00725225 /* UIDevice+TTDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = D3961A251E49B65F00725225 /* UIDevice+TTDevice.m */; };
 		D3961A2C1E49B65F00725225 /* UIView+UIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3961A271E49B65F00725225 /* UIView+UIViewController.m */; };
+		D3961A2F1E49B85F00725225 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3961A2E1E49B85F00725225 /* MyViewController.m */; };
 		FCBD0724B4BEA7123C388699 /* libPods-TTAVPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48C18C61AFBEC693A28AFF93 /* libPods-TTAVPlayer.a */; };
 /* End PBXBuildFile section */
 
@@ -79,10 +79,10 @@
 		D3961A211E49B65F00725225 /* NSString+TTPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TTPlayer.m"; sourceTree = "<group>"; };
 		D3961A221E49B65F00725225 /* TTAVPlayerGestureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAVPlayerGestureView.h; sourceTree = "<group>"; };
 		D3961A231E49B65F00725225 /* TTAVPlayerGestureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTAVPlayerGestureView.m; sourceTree = "<group>"; };
-		D3961A241E49B65F00725225 /* UIDevice+TTDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+TTDevice.h"; sourceTree = "<group>"; };
-		D3961A251E49B65F00725225 /* UIDevice+TTDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+TTDevice.m"; sourceTree = "<group>"; };
 		D3961A261E49B65F00725225 /* UIView+UIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIViewController.h"; sourceTree = "<group>"; };
 		D3961A271E49B65F00725225 /* UIView+UIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIViewController.m"; sourceTree = "<group>"; };
+		D3961A2D1E49B85F00725225 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
+		D3961A2E1E49B85F00725225 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +140,8 @@
 				D31C9F041E0930E5009A0B05 /* AppDelegate.m */,
 				D3961A1A1E49B63200725225 /* ViewController.h */,
 				D3961A1B1E49B63200725225 /* ViewController.m */,
+				D3961A2D1E49B85F00725225 /* MyViewController.h */,
+				D3961A2E1E49B85F00725225 /* MyViewController.m */,
 				D31C9F841E0BE354009A0B05 /* TestVideo.txt */,
 				D31C9F811E0BE28F009A0B05 /* TTTabBarController.h */,
 				D31C9F821E0BE28F009A0B05 /* TTTabBarController.m */,
@@ -198,8 +200,6 @@
 				D3961A211E49B65F00725225 /* NSString+TTPlayer.m */,
 				D3961A221E49B65F00725225 /* TTAVPlayerGestureView.h */,
 				D3961A231E49B65F00725225 /* TTAVPlayerGestureView.m */,
-				D3961A241E49B65F00725225 /* UIDevice+TTDevice.h */,
-				D3961A251E49B65F00725225 /* UIDevice+TTDevice.m */,
 				D3961A261E49B65F00725225 /* UIView+UIViewController.h */,
 				D3961A271E49B65F00725225 /* UIView+UIViewController.m */,
 			);
@@ -334,7 +334,6 @@
 			files = (
 				D31C9F831E0BE28F009A0B05 /* TTTabBarController.m in Sources */,
 				D31C9F051E0930E5009A0B05 /* AppDelegate.m in Sources */,
-				D3961A2B1E49B65F00725225 /* UIDevice+TTDevice.m in Sources */,
 				D3961A101E49B5E800725225 /* TTAVPlayerView.m in Sources */,
 				D3961A121E49B5E800725225 /* TTAVPlayerView+Layout.m in Sources */,
 				D3961A161E49B5E800725225 /* TTPlayerManager.m in Sources */,
@@ -350,6 +349,7 @@
 				D3961A171E49B5E800725225 /* TTLandscapePlayerController.m in Sources */,
 				D3961A191E49B5E800725225 /* TTVideoItem.m in Sources */,
 				D3961A131E49B5E800725225 /* TTPlayerViewController.m in Sources */,
+				D3961A2F1E49B85F00725225 /* MyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -126,11 +126,11 @@
     }else if (toOrientation == TTPlayerOrientationHomeLeft){
         angle = M_PI_2;
     }else{
-        NSLog(@"toOrientation 错误");
+        TTLog(@"toOrientation 错误");
         return;
     }
     if (_playerView.isLandscape) {
-        NSLog(@"已经横屏");
+        TTLog(@"已经横屏");
         return;
     }
     if (self.presentedViewController == nil){
@@ -181,14 +181,14 @@
     }else if (fromOrientation == TTPlayerOrientationHomeRight){
         angle = M_PI_2;
     }else{
-        NSLog(@"不需要改变方向");
+        TTLog(@"不需要改变方向");
         if (completion) {
             completion();
         }
         return;
     }
     if (!_playerView.isLandscape) {
-        NSLog(@"已经竖屏");
+        TTLog(@"已经竖屏");
         if (completion) {
             completion();
         }

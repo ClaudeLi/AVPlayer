@@ -6,7 +6,6 @@
 //  Copyright © 2017年 ClaudeLi. All rights reserved.
 //
 
-#import "TTLandscapePlayerController.h"
 #import "TTAVPlayerSDK.h"
 
 @interface TTLandscapePlayerController ()
