@@ -8,8 +8,16 @@
 
 #import "TTAVPlayer.h"
 #import "TTAVPlayerSDK.h"
+#import "TTPlayerManager.h"
 
-@interface TTAVPlayer ()
+static void * TTAVPlayerStatusContext = &TTAVPlayerStatusContext;
+static void * TTAVPlayerLoadedTimeRangesContext = &TTAVPlayerLoadedTimeRangesContext;
+
+#define  NetworkStatus  0
+
+@interface TTAVPlayer ()<UIAlertViewDelegate>{
+    NSFileManager *_fileManager;
+}
 
 @property (nonatomic, strong) AVPlayer       *player;
 @property (nonatomic, strong) AVPlayerItem   *playerItem;
@@ -18,6 +26,10 @@
 @property (nonatomic, strong) id playTimeObserver;
 @property (nonatomic, strong) CADisplayLink *link;
 @property (nonatomic, assign) NSTimeInterval lastTime;
+
+@property (nonatomic, strong) TTVideoItem *lastVideoItem;
+
+@property (nonatomic, assign) NSInteger lastIndex;
 
 @end
 
@@ -34,12 +46,23 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
+        self.index = -1;
         self.backgroundColor = [UIColor blackColor];
+        _fileManager = [NSFileManager defaultManager];
+        NSError *audioSessionError;
+        AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+        [audioSession setCategory:AVAudioSessionCategoryPlayback error:&audioSessionError];
+        if (audioSessionError) {
+            NSLog(@"%@", audioSessionError);
+        }
         // 前后台通知
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(enterForegroundNotification) name:UIApplicationWillEnterForegroundNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resignActiveNotification) name:UIApplicationDidEnterBackgroundNotification object:nil];
         // 注册监听，屏幕方向改变
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deviceOrientChangeNotification) name:UIDeviceOrientationDidChangeNotification object:nil];
+        // 播放完成通知
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackFinished:) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
+
     }
     return self;
 }
@@ -57,20 +80,26 @@
 }
 
 - (void)deviceOrientChangeNotification{
-    TTLog(@"%s", __func__);
+    NSLog(@"%s", __func__);
     if (self.playerDirectionChange) {
         self.playerDirectionChange();
     }
 }
 
-- (void)setUrlString:(NSString *)urlString{
-    _urlString = urlString;
+- (void)setItemArray:(NSArray *)itemArray{
+    _itemArray = itemArray;
+}
+
+- (void)setIndex:(NSInteger)index{
+    _index = index;
+}
+
+- (void)setVideoItem:(TTVideoItem *)videoItem{
+    _videoItem = videoItem;
     [self _initPlayer];
 }
 
 - (void)_initPlayer{
-    //限制锁屏
-    [UIApplication sharedApplication].idleTimerDisabled = YES;
     if (_playerItem) {
         [self removePlayerObserver];
     }
@@ -78,60 +107,134 @@
         self.playerDelayPlay(NO);
     }
     _canPlay = NO;
-    self.urlAsset = [AVURLAsset URLAssetWithURL:[NSURL URLWithString:_urlString] options:nil];
+    self.lastVideoItem = [self getVideoItem];
+    self.lastIndex = _index;
+    self.urlAsset = [AVURLAsset URLAssetWithURL:[NSURL URLWithString:self.lastVideoItem.playUrl] options:nil];
     _playerItem = [AVPlayerItem playerItemWithAsset:self.urlAsset];
     self.player = [AVPlayer playerWithPlayerItem:_playerItem];
     [self addPlayerObserver];
     [self setPlayerLayer:self.player];
+    if (_rate) {
+        self.player.rate = _rate;
+    }
+    if (self.playerReadyToPlay) {
+        self.playerReadyToPlay();
+    }
 //    if (self.player.currentItem) {
 //        [self.player replaceCurrentItemWithPlayerItem:self.playerItem];
 //    }else {
 //    }
 }
 
+- (TTVideoItem *)getVideoItem{
+    NSString *path = [NSString stringWithFormat:@"%@/Documents/TTVideo/%@.mp4",NSHomeDirectory(), _videoItem.vid];
+    BOOL exist = [_fileManager fileExistsAtPath:path];
+    if (exist) { // 判读视频是否已下载
+        _videoItem.playUrl = [[NSURL fileURLWithPath:path] absoluteString];
+        _videoItem.isNetwork = NO;
+    }else {
+        _videoItem.playUrl = _videoItem.url;
+        _videoItem.isNetwork = YES;
+    }
+    return _videoItem;
+}
+
 - (void)addPlayerObserver{
-    [_playerItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];
-    [_playerItem addObserver:self forKeyPath:@"loadedTimeRanges" options:NSKeyValueObservingOptionNew context:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackFinished:) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
+    [_playerItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:TTAVPlayerStatusContext];
+    [_playerItem addObserver:self forKeyPath:@"loadedTimeRanges" options:NSKeyValueObservingOptionNew context:TTAVPlayerLoadedTimeRangesContext];
+    [self monitoringPlayback:_playerItem];//监听播放状态
 }
 
 
 -(void)playbackFinished:(NSNotification *)notification{
-    TTLog(@"视频播放完成.");
-    TT_WS(ws);
-    _playerItem = [notification object];
-    [_playerItem seekToTime:kCMTimeZero completionHandler:^(BOOL finished) {
-        if (ws.playerPlayEndBlock) {
-            ws.playerPlayEndBlock();
-        }
-    }];
+    if ([notification object] == _playerItem) {
+        TTLog(@"视频播放完成.");
+        TT_WS(ws);
+        [_playerItem seekToTime:kCMTimeZero completionHandler:^(BOOL finished) {
+            if (ws.playerPlayEndBlock) {
+                ws.playerPlayEndBlock();
+            }
+        }];
+    }
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
                         change:(NSDictionary<NSString *,id> *)change
                        context:(void *)context{
-    AVPlayerItem *playerItem = (AVPlayerItem *)object;
-    if ([keyPath isEqualToString:@"status"]) {
-        if (playerItem.status == AVPlayerItemStatusReadyToPlay) {
-            _canPlay = YES;
-            CMTime duration = _playerItem.duration; //获取视屏总长
-            CGFloat totalSeconds = CMTimeGetSeconds(duration);//转换成秒
-            if (self.playerTotalTimeBlock) {
-                self.playerTotalTimeBlock(totalSeconds);
+    if (object == _playerItem) {
+        if ([keyPath isEqualToString:@"status"]) {
+            if (_playerItem.status == AVPlayerItemStatusReadyToPlay) {
+                _canPlay = YES;
+                CMTime duration = _playerItem.duration; //获取视屏总长
+                CGFloat totalSeconds = CMTimeGetSeconds(duration);//转换成秒
+                if (self.playerTotalTimeBlock) {
+                    self.playerTotalTimeBlock(totalSeconds);
+                }
+            }else if (_playerItem.status == AVPlayerItemStatusUnknown){
+                _canPlay = NO;
+                [self stop];
+                if (self.playerToClosePlayer) {
+                    self.playerToClosePlayer();
+                }
+                TTLog(@"未知错误,播放失败,请重试");
+            }else if (_playerItem.status == AVPlayerStatusFailed){
+                _canPlay = NO;
+                [self stop];
+                if (self.playerToClosePlayer) {
+                    self.playerToClosePlayer();
+                }
+                TTLog(@"播放失败,请重试");
             }
-            [self monitoringPlayback:_playerItem];//监听播放状态
-        }else if (playerItem.status == AVPlayerItemStatusUnknown){
-            TTLog(@"播放未知");
-            _canPlay = NO;
-        }else if (playerItem.status == AVPlayerStatusFailed){
-            TTLog(@"播放失败");
-            _canPlay = NO;
+        }else if ([keyPath isEqualToString:@"loadedTimeRanges"]){
+            if (TTAVManager.isAllowedToPlay || !_videoItem.isNetwork) {
+                [self startLoading];
+            }else{
+                if (NetworkStatus) {
+                    [self stop];
+                    if (IOS8) {
+                        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您当前处于非WiFi网络" preferredStyle:UIAlertControllerStyleAlert];
+                        UIAlertAction *action = [UIAlertAction actionWithTitle:@"继续" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                            TTAVManager.isAllowedToPlay = YES;
+                            [self _initPlayer];
+                        }];
+                        UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
+                            if (self.playerToClosePlayer) {
+                                self.playerToClosePlayer();
+                            }
+                        }];
+                        [alert addAction:action];
+                        [alert addAction:action1];
+                        [self.viewController presentViewController:alert animated:YES completion:nil];
+                    }else{
+                        [[[UIAlertView alloc] initWithTitle:@"提示" message:@"您当前处于非WiFi网络" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"继续", nil] show];
+                    }
+                }else{
+                    [self startLoading];
+                }
+            }
         }
-    }else if ([keyPath isEqualToString:@"loadedTimeRanges"]){
-        NSTimeInterval timeInterval = [self availableDurationRanges];
-        CMTime duration = _playerItem.duration;
-        CGFloat totalDuration = CMTimeGetSeconds(duration);
+    }else{
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex) {
+        TTAVManager.isAllowedToPlay = YES;
+        [self _initPlayer];
+    }else{
+        if (self.playerToClosePlayer) {
+            self.playerToClosePlayer();
+        }
+    }
+}
+
+- (void)startLoading{
+    NSTimeInterval timeInterval = [self availableDurationRanges];
+    CMTime duration = _playerItem.duration;
+    CGFloat totalDuration = CMTimeGetSeconds(duration);
+    if (timeInterval > 0 && totalDuration > 0) {
         if (self.playerLoadedTimeBlock) {
             self.playerLoadedTimeBlock((CGFloat)timeInterval/(totalDuration*1.0));
         }
@@ -153,26 +256,31 @@
     //这里设置每秒执行30次
     _playTimeObserver = [_player addPeriodicTimeObserverForInterval:CMTimeMake(1, 30) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
         // 计算当前在第几秒
-        CGFloat currentPlayTime = (CGFloat)item.currentTime.value/(item.currentTime.timescale * 1.0);
-        if (ws.playerCurrentTimeBlock) {
-            ws.playerCurrentTimeBlock(currentPlayTime);
+        CGFloat timescale = item.currentTime.timescale * 1.0;
+        CGFloat currentPlayTime = (CGFloat)item.currentTime.value/timescale;
+        if (currentPlayTime >= 0 && timescale > 0) {
+            if (ws.playerCurrentTimeBlock) {
+                ws.playerCurrentTimeBlock(currentPlayTime);
+            }
         }
     }];
 }
 
 - (void)update{
-    NSTimeInterval current = CMTimeGetSeconds(self.player.currentTime);
-    if (current == self.lastTime) {
-        // 卡顿
-        if (self.playerDelayPlay) {
-            self.playerDelayPlay(YES);
+    if (_player) {
+        NSTimeInterval current = CMTimeGetSeconds(self.player.currentTime);
+        if (current == self.lastTime) {
+            // 卡顿
+            if (self.playerDelayPlay) {
+                self.playerDelayPlay(YES);
+            }
+        }else{// 没有卡顿
+            if (self.playerDelayPlay) {
+                self.playerDelayPlay(NO);
+            }
         }
-    }else{// 没有卡顿
-        if (self.playerDelayPlay) {
-            self.playerDelayPlay(NO);
-        }
+        self.lastTime = current;
     }
-    self.lastTime = current;
 }
 
 #pragma mark -
@@ -195,25 +303,32 @@
 
 
 - (void)stop{
-    //开启锁屏
-    [UIApplication sharedApplication].idleTimerDisabled = NO;
     [self removePlayerObserver];
-    [self.player pause];
-    [self.player setRate:0];
-    [self.player replaceCurrentItemWithPlayerItem:nil];
-    self.player = nil;
     if (self.playerToStop) {
         self.playerToStop();
     }
 }
 
+- (void)cancleLoading{
+    if (_player) {
+        [_player.currentItem cancelPendingSeeks];
+        [_player.currentItem.asset cancelLoading];
+    }
+}
+
 - (CGFloat)currentTime {
-    return CMTimeGetSeconds([self.player currentTime]);
+    if (_player) {
+        return CMTimeGetSeconds([self.player currentTime]);
+    }
+    return 0.0f;
 }
 
 
 - (CGFloat)totalTime {
-    return CMTimeGetSeconds(self.player.currentItem.duration);
+    if (_player.currentItem) {
+        return CMTimeGetSeconds(self.player.currentItem.duration);
+    }
+    return 0.0f;
 }
 
 - (void)seekToTime:(float)seconds completionHandler:(void (^)(BOOL finished))completionHandler{
@@ -236,29 +351,45 @@
 #pragma mark -
 #pragma mark -- removeObserver --
 - (void)removePlayerObserver{
-    [self.player.currentItem cancelPendingSeeks];
-    [self.player.currentItem.asset cancelLoading];
-    if (_playerItem) {
-        [_playerItem removeObserver:self forKeyPath:@"status"];
-        [_playerItem removeObserver:self forKeyPath:@"loadedTimeRanges"];
-        _playerItem = nil;
+    if (_player) {
+        TTLog(@"%s", __func__);
+        [self pause];
+        [_player.currentItem cancelPendingSeeks];
+//        [_player.currentItem.asset cancelLoading];
+        [_player replaceCurrentItemWithPlayerItem:nil];
+        if (_playTimeObserver) {
+            [_player removeTimeObserver:_playTimeObserver];
+            _playTimeObserver = nil;
+        }
+        if (_playerItem) {
+            [_playerItem removeObserver:self forKeyPath:@"status" context:TTAVPlayerStatusContext];
+            [_playerItem removeObserver:self forKeyPath:@"loadedTimeRanges" context:TTAVPlayerLoadedTimeRangesContext];
+            _playerItem = nil;
+        }
+        _player = nil;
     }
-    if (_playTimeObserver) {
-        [_player removeTimeObserver:_playTimeObserver];
-        _playTimeObserver = nil;
-    }
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
 }
 
 - (void)dealloc{
     TTLog(@"%s", __func__);
+    [self close];
+}
+
+- (void)close{
     [self removePlayerObserver];
     [self removeNotifications];
 }
 
 - (void)removeNotifications{
-    [UIApplication sharedApplication].idleTimerDisabled = NO;
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillEnterForegroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (NSString *)floatToString:(float)time{
+    return [NSString stringWithFormat:@"%f", time];
 }
 
 @end

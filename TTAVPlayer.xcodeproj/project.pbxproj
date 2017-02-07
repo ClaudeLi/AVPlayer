@@ -9,25 +9,29 @@
 /* Begin PBXBuildFile section */
 		D31C9F021E0930E5009A0B05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D31C9F011E0930E5009A0B05 /* main.m */; };
 		D31C9F051E0930E5009A0B05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D31C9F041E0930E5009A0B05 /* AppDelegate.m */; };
-		D31C9F081E0930E5009A0B05 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D31C9F071E0930E5009A0B05 /* ViewController.m */; };
 		D31C9F0B1E0930E5009A0B05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D31C9F091E0930E5009A0B05 /* Main.storyboard */; };
 		D31C9F0E1E0930E5009A0B05 /* TTAVPlayer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D31C9F0C1E0930E5009A0B05 /* TTAVPlayer.xcdatamodeld */; };
 		D31C9F101E0930E5009A0B05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D31C9F0F1E0930E5009A0B05 /* Assets.xcassets */; };
 		D31C9F131E0930E5009A0B05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D31C9F111E0930E5009A0B05 /* LaunchScreen.storyboard */; };
-		D31C9F731E0BDD46009A0B05 /* NSString+TTPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D31C9F5F1E0BDD46009A0B05 /* NSString+TTPlayer.m */; };
-		D31C9F741E0BDD46009A0B05 /* TTAVPlayerGestureView.m in Sources */ = {isa = PBXBuildFile; fileRef = D31C9F611E0BDD46009A0B05 /* TTAVPlayerGestureView.m */; };
-		D31C9F751E0BDD46009A0B05 /* UIDevice+TTDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = D31C9F631E0BDD46009A0B05 /* UIDevice+TTDevice.m */; };
-		D31C9F761E0BDD46009A0B05 /* TTAVPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D31C9F651E0BDD46009A0B05 /* TTAVPlayer.m */; };
-		D31C9F771E0BDD46009A0B05 /* TTAVPlayerView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = D31C9F681E0BDD46009A0B05 /* TTAVPlayerView+Layout.m */; };
-		D31C9F781E0BDD46009A0B05 /* TTAVPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D31C9F6A1E0BDD46009A0B05 /* TTAVPlayerView.m */; };
-		D31C9F791E0BDD46009A0B05 /* TTAVPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D31C9F6B1E0BDD46009A0B05 /* TTAVPlayerView.xib */; };
-		D31C9F7A1E0BDD46009A0B05 /* TTPlayerLandscapeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D31C9F6D1E0BDD46009A0B05 /* TTPlayerLandscapeController.m */; };
-		D31C9F7B1E0BDD46009A0B05 /* TTPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D31C9F6F1E0BDD46009A0B05 /* TTPlayerManager.m */; };
-		D31C9F7C1E0BDD46009A0B05 /* TTPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D31C9F711E0BDD46009A0B05 /* TTPlayerViewController.m */; };
-		D31C9F7D1E0BDD46009A0B05 /* TTPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D31C9F721E0BDD46009A0B05 /* TTPlayerViewController.xib */; };
-		D31C9F801E0BDE37009A0B05 /* UIView+UIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D31C9F7F1E0BDE37009A0B05 /* UIView+UIViewController.m */; };
 		D31C9F831E0BE28F009A0B05 /* TTTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D31C9F821E0BE28F009A0B05 /* TTTabBarController.m */; };
 		D31C9F851E0BE354009A0B05 /* TestVideo.txt in Resources */ = {isa = PBXBuildFile; fileRef = D31C9F841E0BE354009A0B05 /* TestVideo.txt */; };
+		D3961A0F1E49B5E800725225 /* TTAVPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D39619FD1E49B5E800725225 /* TTAVPlayer.m */; };
+		D3961A101E49B5E800725225 /* TTAVPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D39619FF1E49B5E800725225 /* TTAVPlayerView.m */; };
+		D3961A111E49B5E800725225 /* TTAVPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3961A001E49B5E800725225 /* TTAVPlayerView.xib */; };
+		D3961A121E49B5E800725225 /* TTAVPlayerView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = D3961A021E49B5E800725225 /* TTAVPlayerView+Layout.m */; };
+		D3961A131E49B5E800725225 /* TTPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3961A041E49B5E800725225 /* TTPlayerViewController.m */; };
+		D3961A141E49B5E800725225 /* TTPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3961A051E49B5E800725225 /* TTPlayerViewController.xib */; };
+		D3961A151E49B5E800725225 /* TTPlayerLandscapeController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3961A071E49B5E800725225 /* TTPlayerLandscapeController.m */; };
+		D3961A161E49B5E800725225 /* TTPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D3961A091E49B5E800725225 /* TTPlayerManager.m */; };
+		D3961A171E49B5E800725225 /* TTLandscapePlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3961A0B1E49B5E800725225 /* TTLandscapePlayerController.m */; };
+		D3961A181E49B5E800725225 /* TTLandscapePlayerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3961A0C1E49B5E800725225 /* TTLandscapePlayerController.xib */; };
+		D3961A191E49B5E800725225 /* TTVideoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D3961A0E1E49B5E800725225 /* TTVideoItem.m */; };
+		D3961A1C1E49B63200725225 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3961A1B1E49B63200725225 /* ViewController.m */; };
+		D3961A281E49B65F00725225 /* NSObject+TTKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = D3961A1F1E49B65F00725225 /* NSObject+TTKVO.m */; };
+		D3961A291E49B65F00725225 /* NSString+TTPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = D3961A211E49B65F00725225 /* NSString+TTPlayer.m */; };
+		D3961A2A1E49B65F00725225 /* TTAVPlayerGestureView.m in Sources */ = {isa = PBXBuildFile; fileRef = D3961A231E49B65F00725225 /* TTAVPlayerGestureView.m */; };
+		D3961A2B1E49B65F00725225 /* UIDevice+TTDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = D3961A251E49B65F00725225 /* UIDevice+TTDevice.m */; };
+		D3961A2C1E49B65F00725225 /* UIView+UIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3961A271E49B65F00725225 /* UIView+UIViewController.m */; };
 		FCBD0724B4BEA7123C388699 /* libPods-TTAVPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48C18C61AFBEC693A28AFF93 /* libPods-TTAVPlayer.a */; };
 /* End PBXBuildFile section */
 
@@ -39,39 +43,46 @@
 		D31C9F011E0930E5009A0B05 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D31C9F031E0930E5009A0B05 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D31C9F041E0930E5009A0B05 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D31C9F061E0930E5009A0B05 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D31C9F071E0930E5009A0B05 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D31C9F0A1E0930E5009A0B05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D31C9F0D1E0930E5009A0B05 /* TTAVPlayer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TTAVPlayer.xcdatamodel; sourceTree = "<group>"; };
 		D31C9F0F1E0930E5009A0B05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D31C9F121E0930E5009A0B05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D31C9F141E0930E5009A0B05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D31C9F5E1E0BDD46009A0B05 /* NSString+TTPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TTPlayer.h"; sourceTree = "<group>"; };
-		D31C9F5F1E0BDD46009A0B05 /* NSString+TTPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TTPlayer.m"; sourceTree = "<group>"; };
-		D31C9F601E0BDD46009A0B05 /* TTAVPlayerGestureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAVPlayerGestureView.h; sourceTree = "<group>"; };
-		D31C9F611E0BDD46009A0B05 /* TTAVPlayerGestureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTAVPlayerGestureView.m; sourceTree = "<group>"; };
-		D31C9F621E0BDD46009A0B05 /* UIDevice+TTDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+TTDevice.h"; sourceTree = "<group>"; };
-		D31C9F631E0BDD46009A0B05 /* UIDevice+TTDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+TTDevice.m"; sourceTree = "<group>"; };
-		D31C9F641E0BDD46009A0B05 /* TTAVPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAVPlayer.h; sourceTree = "<group>"; };
-		D31C9F651E0BDD46009A0B05 /* TTAVPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTAVPlayer.m; sourceTree = "<group>"; };
-		D31C9F661E0BDD46009A0B05 /* TTAVPlayerSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAVPlayerSDK.h; sourceTree = "<group>"; };
-		D31C9F671E0BDD46009A0B05 /* TTAVPlayerView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TTAVPlayerView+Layout.h"; sourceTree = "<group>"; };
-		D31C9F681E0BDD46009A0B05 /* TTAVPlayerView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TTAVPlayerView+Layout.m"; sourceTree = "<group>"; };
-		D31C9F691E0BDD46009A0B05 /* TTAVPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAVPlayerView.h; sourceTree = "<group>"; };
-		D31C9F6A1E0BDD46009A0B05 /* TTAVPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTAVPlayerView.m; sourceTree = "<group>"; };
-		D31C9F6B1E0BDD46009A0B05 /* TTAVPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTAVPlayerView.xib; sourceTree = "<group>"; };
-		D31C9F6C1E0BDD46009A0B05 /* TTPlayerLandscapeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTPlayerLandscapeController.h; sourceTree = "<group>"; };
-		D31C9F6D1E0BDD46009A0B05 /* TTPlayerLandscapeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTPlayerLandscapeController.m; sourceTree = "<group>"; };
-		D31C9F6E1E0BDD46009A0B05 /* TTPlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTPlayerManager.h; sourceTree = "<group>"; };
-		D31C9F6F1E0BDD46009A0B05 /* TTPlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTPlayerManager.m; sourceTree = "<group>"; };
-		D31C9F701E0BDD46009A0B05 /* TTPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTPlayerViewController.h; sourceTree = "<group>"; };
-		D31C9F711E0BDD46009A0B05 /* TTPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTPlayerViewController.m; sourceTree = "<group>"; };
-		D31C9F721E0BDD46009A0B05 /* TTPlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTPlayerViewController.xib; sourceTree = "<group>"; };
-		D31C9F7E1E0BDE37009A0B05 /* UIView+UIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIViewController.h"; sourceTree = "<group>"; };
-		D31C9F7F1E0BDE37009A0B05 /* UIView+UIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIViewController.m"; sourceTree = "<group>"; };
 		D31C9F811E0BE28F009A0B05 /* TTTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTabBarController.h; sourceTree = "<group>"; };
 		D31C9F821E0BE28F009A0B05 /* TTTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTabBarController.m; sourceTree = "<group>"; };
 		D31C9F841E0BE354009A0B05 /* TestVideo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestVideo.txt; sourceTree = "<group>"; };
+		D39619FB1E49B5E800725225 /* TTAVPlayerSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAVPlayerSDK.h; sourceTree = "<group>"; };
+		D39619FC1E49B5E800725225 /* TTAVPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAVPlayer.h; sourceTree = "<group>"; };
+		D39619FD1E49B5E800725225 /* TTAVPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTAVPlayer.m; sourceTree = "<group>"; };
+		D39619FE1E49B5E800725225 /* TTAVPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAVPlayerView.h; sourceTree = "<group>"; };
+		D39619FF1E49B5E800725225 /* TTAVPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTAVPlayerView.m; sourceTree = "<group>"; };
+		D3961A001E49B5E800725225 /* TTAVPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTAVPlayerView.xib; sourceTree = "<group>"; };
+		D3961A011E49B5E800725225 /* TTAVPlayerView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TTAVPlayerView+Layout.h"; sourceTree = "<group>"; };
+		D3961A021E49B5E800725225 /* TTAVPlayerView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TTAVPlayerView+Layout.m"; sourceTree = "<group>"; };
+		D3961A031E49B5E800725225 /* TTPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTPlayerViewController.h; sourceTree = "<group>"; };
+		D3961A041E49B5E800725225 /* TTPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTPlayerViewController.m; sourceTree = "<group>"; };
+		D3961A051E49B5E800725225 /* TTPlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTPlayerViewController.xib; sourceTree = "<group>"; };
+		D3961A061E49B5E800725225 /* TTPlayerLandscapeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTPlayerLandscapeController.h; sourceTree = "<group>"; };
+		D3961A071E49B5E800725225 /* TTPlayerLandscapeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTPlayerLandscapeController.m; sourceTree = "<group>"; };
+		D3961A081E49B5E800725225 /* TTPlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTPlayerManager.h; sourceTree = "<group>"; };
+		D3961A091E49B5E800725225 /* TTPlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTPlayerManager.m; sourceTree = "<group>"; };
+		D3961A0A1E49B5E800725225 /* TTLandscapePlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTLandscapePlayerController.h; sourceTree = "<group>"; };
+		D3961A0B1E49B5E800725225 /* TTLandscapePlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTLandscapePlayerController.m; sourceTree = "<group>"; };
+		D3961A0C1E49B5E800725225 /* TTLandscapePlayerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTLandscapePlayerController.xib; sourceTree = "<group>"; };
+		D3961A0D1E49B5E800725225 /* TTVideoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTVideoItem.h; sourceTree = "<group>"; };
+		D3961A0E1E49B5E800725225 /* TTVideoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTVideoItem.m; sourceTree = "<group>"; };
+		D3961A1A1E49B63200725225 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D3961A1B1E49B63200725225 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D3961A1E1E49B65F00725225 /* NSObject+TTKVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+TTKVO.h"; sourceTree = "<group>"; };
+		D3961A1F1E49B65F00725225 /* NSObject+TTKVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TTKVO.m"; sourceTree = "<group>"; };
+		D3961A201E49B65F00725225 /* NSString+TTPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TTPlayer.h"; sourceTree = "<group>"; };
+		D3961A211E49B65F00725225 /* NSString+TTPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TTPlayer.m"; sourceTree = "<group>"; };
+		D3961A221E49B65F00725225 /* TTAVPlayerGestureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAVPlayerGestureView.h; sourceTree = "<group>"; };
+		D3961A231E49B65F00725225 /* TTAVPlayerGestureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTAVPlayerGestureView.m; sourceTree = "<group>"; };
+		D3961A241E49B65F00725225 /* UIDevice+TTDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+TTDevice.h"; sourceTree = "<group>"; };
+		D3961A251E49B65F00725225 /* UIDevice+TTDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+TTDevice.m"; sourceTree = "<group>"; };
+		D3961A261E49B65F00725225 /* UIView+UIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIViewController.h"; sourceTree = "<group>"; };
+		D3961A271E49B65F00725225 /* UIView+UIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,8 +138,8 @@
 				D31C9F5C1E0BDD46009A0B05 /* TTAVPlayerSDK */,
 				D31C9F031E0930E5009A0B05 /* AppDelegate.h */,
 				D31C9F041E0930E5009A0B05 /* AppDelegate.m */,
-				D31C9F061E0930E5009A0B05 /* ViewController.h */,
-				D31C9F071E0930E5009A0B05 /* ViewController.m */,
+				D3961A1A1E49B63200725225 /* ViewController.h */,
+				D3961A1B1E49B63200725225 /* ViewController.m */,
 				D31C9F841E0BE354009A0B05 /* TestVideo.txt */,
 				D31C9F811E0BE28F009A0B05 /* TTTabBarController.h */,
 				D31C9F821E0BE28F009A0B05 /* TTTabBarController.m */,
@@ -153,37 +164,44 @@
 		D31C9F5C1E0BDD46009A0B05 /* TTAVPlayerSDK */ = {
 			isa = PBXGroup;
 			children = (
-				D31C9F661E0BDD46009A0B05 /* TTAVPlayerSDK.h */,
-				D31C9F5D1E0BDD46009A0B05 /* Tools */,
-				D31C9F641E0BDD46009A0B05 /* TTAVPlayer.h */,
-				D31C9F651E0BDD46009A0B05 /* TTAVPlayer.m */,
-				D31C9F691E0BDD46009A0B05 /* TTAVPlayerView.h */,
-				D31C9F6A1E0BDD46009A0B05 /* TTAVPlayerView.m */,
-				D31C9F6B1E0BDD46009A0B05 /* TTAVPlayerView.xib */,
-				D31C9F671E0BDD46009A0B05 /* TTAVPlayerView+Layout.h */,
-				D31C9F681E0BDD46009A0B05 /* TTAVPlayerView+Layout.m */,
-				D31C9F6E1E0BDD46009A0B05 /* TTPlayerManager.h */,
-				D31C9F6F1E0BDD46009A0B05 /* TTPlayerManager.m */,
-				D31C9F701E0BDD46009A0B05 /* TTPlayerViewController.h */,
-				D31C9F711E0BDD46009A0B05 /* TTPlayerViewController.m */,
-				D31C9F721E0BDD46009A0B05 /* TTPlayerViewController.xib */,
-				D31C9F6C1E0BDD46009A0B05 /* TTPlayerLandscapeController.h */,
-				D31C9F6D1E0BDD46009A0B05 /* TTPlayerLandscapeController.m */,
+				D3961A1D1E49B65F00725225 /* Tools */,
+				D39619FB1E49B5E800725225 /* TTAVPlayerSDK.h */,
+				D39619FC1E49B5E800725225 /* TTAVPlayer.h */,
+				D39619FD1E49B5E800725225 /* TTAVPlayer.m */,
+				D39619FE1E49B5E800725225 /* TTAVPlayerView.h */,
+				D39619FF1E49B5E800725225 /* TTAVPlayerView.m */,
+				D3961A001E49B5E800725225 /* TTAVPlayerView.xib */,
+				D3961A011E49B5E800725225 /* TTAVPlayerView+Layout.h */,
+				D3961A021E49B5E800725225 /* TTAVPlayerView+Layout.m */,
+				D3961A031E49B5E800725225 /* TTPlayerViewController.h */,
+				D3961A041E49B5E800725225 /* TTPlayerViewController.m */,
+				D3961A051E49B5E800725225 /* TTPlayerViewController.xib */,
+				D3961A061E49B5E800725225 /* TTPlayerLandscapeController.h */,
+				D3961A071E49B5E800725225 /* TTPlayerLandscapeController.m */,
+				D3961A081E49B5E800725225 /* TTPlayerManager.h */,
+				D3961A091E49B5E800725225 /* TTPlayerManager.m */,
+				D3961A0A1E49B5E800725225 /* TTLandscapePlayerController.h */,
+				D3961A0B1E49B5E800725225 /* TTLandscapePlayerController.m */,
+				D3961A0C1E49B5E800725225 /* TTLandscapePlayerController.xib */,
+				D3961A0D1E49B5E800725225 /* TTVideoItem.h */,
+				D3961A0E1E49B5E800725225 /* TTVideoItem.m */,
 			);
 			path = TTAVPlayerSDK;
 			sourceTree = "<group>";
 		};
-		D31C9F5D1E0BDD46009A0B05 /* Tools */ = {
+		D3961A1D1E49B65F00725225 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				D31C9F7E1E0BDE37009A0B05 /* UIView+UIViewController.h */,
-				D31C9F7F1E0BDE37009A0B05 /* UIView+UIViewController.m */,
-				D31C9F5E1E0BDD46009A0B05 /* NSString+TTPlayer.h */,
-				D31C9F5F1E0BDD46009A0B05 /* NSString+TTPlayer.m */,
-				D31C9F601E0BDD46009A0B05 /* TTAVPlayerGestureView.h */,
-				D31C9F611E0BDD46009A0B05 /* TTAVPlayerGestureView.m */,
-				D31C9F621E0BDD46009A0B05 /* UIDevice+TTDevice.h */,
-				D31C9F631E0BDD46009A0B05 /* UIDevice+TTDevice.m */,
+				D3961A1E1E49B65F00725225 /* NSObject+TTKVO.h */,
+				D3961A1F1E49B65F00725225 /* NSObject+TTKVO.m */,
+				D3961A201E49B65F00725225 /* NSString+TTPlayer.h */,
+				D3961A211E49B65F00725225 /* NSString+TTPlayer.m */,
+				D3961A221E49B65F00725225 /* TTAVPlayerGestureView.h */,
+				D3961A231E49B65F00725225 /* TTAVPlayerGestureView.m */,
+				D3961A241E49B65F00725225 /* UIDevice+TTDevice.h */,
+				D3961A251E49B65F00725225 /* UIDevice+TTDevice.m */,
+				D3961A261E49B65F00725225 /* UIView+UIViewController.h */,
+				D3961A271E49B65F00725225 /* UIView+UIViewController.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -250,10 +268,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D31C9F131E0930E5009A0B05 /* LaunchScreen.storyboard in Resources */,
-				D31C9F7D1E0BDD46009A0B05 /* TTPlayerViewController.xib in Resources */,
+				D3961A181E49B5E800725225 /* TTLandscapePlayerController.xib in Resources */,
+				D3961A111E49B5E800725225 /* TTAVPlayerView.xib in Resources */,
 				D31C9F851E0BE354009A0B05 /* TestVideo.txt in Resources */,
+				D3961A141E49B5E800725225 /* TTPlayerViewController.xib in Resources */,
 				D31C9F101E0930E5009A0B05 /* Assets.xcassets in Resources */,
-				D31C9F791E0BDD46009A0B05 /* TTAVPlayerView.xib in Resources */,
 				D31C9F0B1E0930E5009A0B05 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,21 +332,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D31C9F081E0930E5009A0B05 /* ViewController.m in Sources */,
-				D31C9F731E0BDD46009A0B05 /* NSString+TTPlayer.m in Sources */,
-				D31C9F741E0BDD46009A0B05 /* TTAVPlayerGestureView.m in Sources */,
-				D31C9F771E0BDD46009A0B05 /* TTAVPlayerView+Layout.m in Sources */,
-				D31C9F761E0BDD46009A0B05 /* TTAVPlayer.m in Sources */,
-				D31C9F801E0BDE37009A0B05 /* UIView+UIViewController.m in Sources */,
 				D31C9F831E0BE28F009A0B05 /* TTTabBarController.m in Sources */,
-				D31C9F7C1E0BDD46009A0B05 /* TTPlayerViewController.m in Sources */,
 				D31C9F051E0930E5009A0B05 /* AppDelegate.m in Sources */,
+				D3961A2B1E49B65F00725225 /* UIDevice+TTDevice.m in Sources */,
+				D3961A101E49B5E800725225 /* TTAVPlayerView.m in Sources */,
+				D3961A121E49B5E800725225 /* TTAVPlayerView+Layout.m in Sources */,
+				D3961A161E49B5E800725225 /* TTPlayerManager.m in Sources */,
 				D31C9F021E0930E5009A0B05 /* main.m in Sources */,
-				D31C9F751E0BDD46009A0B05 /* UIDevice+TTDevice.m in Sources */,
-				D31C9F7B1E0BDD46009A0B05 /* TTPlayerManager.m in Sources */,
-				D31C9F781E0BDD46009A0B05 /* TTAVPlayerView.m in Sources */,
+				D3961A291E49B65F00725225 /* NSString+TTPlayer.m in Sources */,
+				D3961A1C1E49B63200725225 /* ViewController.m in Sources */,
+				D3961A2C1E49B65F00725225 /* UIView+UIViewController.m in Sources */,
+				D3961A2A1E49B65F00725225 /* TTAVPlayerGestureView.m in Sources */,
+				D3961A151E49B5E800725225 /* TTPlayerLandscapeController.m in Sources */,
+				D3961A281E49B65F00725225 /* NSObject+TTKVO.m in Sources */,
 				D31C9F0E1E0930E5009A0B05 /* TTAVPlayer.xcdatamodeld in Sources */,
-				D31C9F7A1E0BDD46009A0B05 /* TTPlayerLandscapeController.m in Sources */,
+				D3961A0F1E49B5E800725225 /* TTAVPlayer.m in Sources */,
+				D3961A171E49B5E800725225 /* TTLandscapePlayerController.m in Sources */,
+				D3961A191E49B5E800725225 /* TTVideoItem.m in Sources */,
+				D3961A131E49B5E800725225 /* TTPlayerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

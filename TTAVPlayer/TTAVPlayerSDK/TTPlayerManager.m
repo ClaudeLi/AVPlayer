@@ -15,6 +15,8 @@ static TTPlayerManager *manager;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         manager = [[TTPlayerManager alloc] init];
+        manager.listPlayMode = YES;
+        manager.deauftPlayMode = NO;
     });
     return manager;
 }

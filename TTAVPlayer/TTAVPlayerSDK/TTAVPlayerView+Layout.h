@@ -26,4 +26,6 @@
 
 - (void)removeTimer;
 
+- (void)showTipsWithTime:(CGFloat)time;
+
 @end

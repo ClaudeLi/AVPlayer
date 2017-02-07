@@ -13,13 +13,22 @@
 
 @property (nonatomic) TTPlayerViewController *player;
 
+@property (nonatomic, strong) NSMutableArray *itemArray;
+
 @end
 
 @implementation ViewController
 
+- (NSMutableArray *)itemArray{
+    if (!_itemArray) {
+        _itemArray = [NSMutableArray array];
+    }
+    return _itemArray;
+}
+
 - (TTPlayerViewController *)player{
     if (!_player) {
-        _player = [[TTPlayerViewController alloc] init];
+        _player = [[TTPlayerViewController alloc] initWithType:TTAVPlayerTypeDefault];
         _player.parentView = self.view;
     }
     return _player;
@@ -27,31 +36,47 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // 设置Player
+    self.player.frame = CGRectMake(0, 20, self.view.frame.size.width, self.view.frame.size.width/16.0 * 9.0);
+    // 设置播放视频model数组,
+    self.player.itemArray = [self getVideoItemArray];
+    self.player.index = 0;
+    
+//    // 单独视频直接传入单独model
+    //[self.player setItem:<#(TTVideoItem *)#>];
+}
+
+
+- (NSArray *)getVideoItemArray{
     // 获取测试数据Url数组
     NSString *path = [[NSBundle mainBundle] pathForResource:@"TestVideo" ofType:@"txt"];
     NSData *data = [[NSData alloc]initWithContentsOfFile:path];
     NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSArray *array = [string componentsSeparatedByString:@"\n"];
+    NSArray *urlArray = [string componentsSeparatedByString:@"\n"];
     
-    // 设置Player
-    self.player.frame = CGRectMake(0, 20, self.view.frame.size.width, self.view.frame.size.width/16.0 * 9.0);
-    // 正在项目使用中 涉及到分享什么的 需要传入的可能是model数组, demo只做参考 请自行修改
-    self.player.itemArray = array;
-    self.player.index = 0;
-    
-//    // 单独视频直接传视频Url/单个model
-//    [self.player setUrlString:@"http://v.tiaooo.com/lo_M1PD6r1v1DG4k632svu3bQdWH"];
+    int i = 0;
+    NSMutableArray *itemArray = [NSMutableArray array];
+    for (NSString *urlStr in urlArray) {
+        TTVideoItem *item = [[TTVideoItem alloc] init];
+        item.url = urlStr;
+        item.vid = TT_intToString(i);
+        item.title = TT_intToString(i);
+        [itemArray addObject:item];
+        i++;
+    }
+    return [itemArray copy];
 }
-
 
 - (BOOL)shouldAutorotate
 {
     return NO;
 }
+
 -(UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
     return UIInterfaceOrientationMaskPortrait ;
 }
+
 -(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
 {
     return UIInterfaceOrientationPortrait;

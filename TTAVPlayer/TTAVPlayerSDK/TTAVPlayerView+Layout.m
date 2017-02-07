@@ -8,6 +8,7 @@
 
 #import "TTAVPlayerView+Layout.h"
 #import "TTAVPlayerSDK.h"
+#import "NSString+TTPlayer.h"
 
 @implementation TTAVPlayerView (Layout)
 
@@ -26,6 +27,18 @@
     [self.nextBtn setImage:[UIImage imageNamed:@"TTPlayerIcon_big_next"] forState:UIControlStateSelected];
     [self.modeBtn setImage:[UIImage imageNamed:@"TTPlayerIcon_big_singleOne"] forState:UIControlStateSelected];
     [self.modeBtn setImage:[UIImage imageNamed:@"TTPlayerIcon_big_loops"] forState:UIControlStateNormal];
+    
+    CABasicAnimation *monkeyAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    monkeyAnimation.toValue = [NSNumber numberWithFloat:2.0 * M_PI];
+    monkeyAnimation.duration = 1.5f;
+    monkeyAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+    monkeyAnimation.removedOnCompletion = NO; //No Remove
+    monkeyAnimation.repeatCount = FLT_MAX;
+    [self.loadingView.layer addAnimation:monkeyAnimation forKey:@"AnimatedKey"];
+    self.loadingView.layer.speed = 1.5f;
+    
+    self.tipsView.layer.masksToBounds = YES;
+    self.tipsView.layer.cornerRadius = 4.0f;
 }
 
 - (void)_setPortraitLayout{
@@ -48,10 +61,10 @@
     }];
     
     [self.playSlider mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(ws).with.offset(75);
-        make.right.equalTo(ws).with.offset(-75);
-        make.top.equalTo(ws.bottomView.mas_top);
-        make.bottom.equalTo(ws.bottomView.mas_bottom);
+        make.left.equalTo(ws.carrierView).with.offset(75);
+        make.right.equalTo(ws.carrierView).with.offset(-75);
+        make.centerY.equalTo(ws.bottomView.mas_centerY);
+        make.height.mas_equalTo(10);
     }];
     [self.bufferProgress mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(ws.playSlider.mas_left);
@@ -82,10 +95,10 @@
     }];
     
     [self.playSlider mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(ws);
-        make.right.equalTo(ws);
+        make.left.equalTo(ws.carrierView);
+        make.right.equalTo(ws.carrierView);
         make.centerY.equalTo(ws.bottomView.mas_top);
-        make.height.mas_equalTo(20);
+        make.height.mas_equalTo(10);
     }];
     [self.bufferProgress mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(ws.playSlider.mas_left);
@@ -96,8 +109,7 @@
 }
 
 - (void)setSwitchLayoutHidden:(BOOL)hidden{
-//    [[UIApplication sharedApplication] setStatusBarHidden:!hidden];
-    self.loadingView.activityIndicatorViewStyle = hidden?UIActivityIndicatorViewStyleWhite:UIActivityIndicatorViewStyleWhiteLarge;
+    [[UIApplication sharedApplication] setStatusBarHidden:!hidden];
     
     self.rotateBtn.hidden = !hidden;
     self.topView.hidden     = hidden;
@@ -149,9 +161,13 @@
 
 - (void)setBarHidden:(BOOL)hidden{
     if (self.isLandscape) {
+        self.sweepBtn.hidden = hidden;
         self.topView.hidden = hidden;
     }else{
         self.topView.hidden = YES;
+        if (self.type == TTAVPlayerTypeListPlayer) {
+            self.sweepBtn.hidden = YES;
+        }
     }
     self.bottomView.hidden = hidden;
     self.bufferProgress.hidden = hidden;
@@ -164,6 +180,16 @@
         [_timer invalidate];
         _timer = nil;
     }
+}
+
+- (void)showTipsWithTime:(CGFloat)time{
+    self.tipsView.hidden = NO;
+    self.tipsView.text = [NSString stringWithFormat:@"上次观看至%@", [NSString stringWithConvertTime:time]];
+    [self performSelector:@selector(hideTipsView) withObject:nil afterDelay:1.5];
+}
+
+- (void)hideTipsView{
+    self.tipsView.hidden = YES;
 }
 
 @end
