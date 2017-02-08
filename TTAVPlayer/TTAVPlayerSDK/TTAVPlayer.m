@@ -13,6 +13,7 @@
 static void * TTAVPlayerStatusContext = &TTAVPlayerStatusContext;
 static void * TTAVPlayerLoadedTimeRangesContext = &TTAVPlayerLoadedTimeRangesContext;
 
+// 网络判断
 #define  NetworkStatus  0
 
 @interface TTAVPlayer ()<UIAlertViewDelegate>{
@@ -190,7 +191,7 @@ static void * TTAVPlayerLoadedTimeRangesContext = &TTAVPlayerLoadedTimeRangesCon
             if (TTAVManager.isAllowedToPlay || !_videoItem.isNetwork) {
                 [self startLoading];
             }else{
-                if (NetworkStatus) {
+                if (NetworkStatus) { // 这里做网络判断流量还是wifi
                     [self stop];
                     if (IOS8) {
                         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您当前处于非WiFi网络" preferredStyle:UIAlertControllerStyleAlert];

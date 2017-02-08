@@ -46,6 +46,8 @@
     //[self.player setItem:<#(TTVideoItem *)#>];
 }
 
+
+// 获取测试数据数组
 - (NSArray *)getVideoItemArray{
     // 获取测试数据Url数组
     NSString *path = [[NSBundle mainBundle] pathForResource:@"TestVideo" ofType:@"txt"];
