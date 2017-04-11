@@ -18,6 +18,7 @@ static void * TTAVPlayerLoadedTimeRangesContext = &TTAVPlayerLoadedTimeRangesCon
 
 @interface TTAVPlayer ()<UIAlertViewDelegate>{
     NSFileManager *_fileManager;
+    NSTimeInterval _rotateTime;
 }
 
 @property (nonatomic, strong) AVPlayer       *player;
@@ -81,9 +82,14 @@ static void * TTAVPlayerLoadedTimeRangesContext = &TTAVPlayerLoadedTimeRangesCon
 }
 
 - (void)deviceOrientChangeNotification{
-    TTLog(@"%s", __func__);
-    if (self.playerDirectionChange) {
-        self.playerDirectionChange();
+    NSTimeInterval nowTime = [[NSDate date] timeIntervalSince1970];
+    if (nowTime - _rotateTime < 0.5) {
+        _rotateTime = nowTime;
+    }else{
+        _rotateTime = nowTime;
+        if (self.playerDirectionChange) {
+            self.playerDirectionChange();
+        }
     }
 }
 
