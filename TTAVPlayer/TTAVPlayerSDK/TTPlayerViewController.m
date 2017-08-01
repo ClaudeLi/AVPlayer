@@ -133,41 +133,42 @@
         TTLog(@"已经横屏");
         return;
     }
-    if (self.presentedViewController == nil){
-        _isFullScreen = YES;
-        _parentView.viewController.view.hidden = YES;
-        if (!_parentView.viewController.hidesBottomBarWhenPushed) {
-            UITabBarController *tabBar = (UITabBarController *)[[UIApplication sharedApplication] keyWindow].rootViewController;
-            tabBar.tabBar.hidden = YES;
-        }
-        _landscapeViewController.orientation = toOrientation;
-        [[UIApplication sharedApplication] keyWindow].backgroundColor = [UIColor blackColor];
-        
-        TT_WS(ws);
-        [self presentViewController:_landscapeViewController animated:NO completion:^{
-            [self.view removeFromSuperview];
-            [self removeFromParentViewController];
-            [self.landscapeViewController addChildViewController:self];
-            [self.landscapeViewController.view addSubview:self.view];
-            [[UIApplication sharedApplication] setStatusBarHidden:YES];
-            //        [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationLandscapeRight animated:NO];
-            [self.playerView setLandscapeLayout];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (self.presentedViewController == nil){
+            _isFullScreen = YES;
+            _parentView.viewController.view.hidden = YES;
+            if (!_parentView.viewController.hidesBottomBarWhenPushed) {
+                UITabBarController *tabBar = (UITabBarController *)[[UIApplication sharedApplication] keyWindow].rootViewController;
+                tabBar.tabBar.hidden = YES;
+            }
+            _landscapeViewController.orientation = toOrientation;
+            [[UIApplication sharedApplication] keyWindow].backgroundColor = [UIColor blackColor];
             
-            ws.parentView.viewController.view.hidden = NO;
-            //旋转前
-            CGAffineTransform transform = CGAffineTransformMakeRotation(angle);
-            transform = CGAffineTransformScale(transform, 1.0, 1.0);
-            ws.view.transform = transform;
-            ws.view.center = _landscapeViewController.view.center;
-            //旋转动画
-            [UIView animateWithDuration:[[UIApplication sharedApplication] statusBarOrientationAnimationDuration] animations:^{
-                ws.view.transform = CGAffineTransformIdentity;
-                ws.view.frame = _landscapeViewController.view.bounds;
-            }completion:^(BOOL finished) {
-                //            [[UIApplication sharedApplication] setStatusBarHidden:NO];
+            TT_WS(ws);
+            [self presentViewController:_landscapeViewController animated:NO completion:^{
+                [self.view removeFromSuperview];
+                [self removeFromParentViewController];
+                [self.landscapeViewController addChildViewController:self];
+                [self.landscapeViewController.view addSubview:self.view];
+                [[UIApplication sharedApplication] setStatusBarHidden:YES];
+                [self.playerView setLandscapeLayout];
+                
+                ws.parentView.viewController.view.hidden = NO;
+                //旋转前
+                CGAffineTransform transform = CGAffineTransformMakeRotation(angle);
+                transform = CGAffineTransformScale(transform, 1.0, 1.0);
+                ws.view.transform = transform;
+                ws.view.center = _landscapeViewController.view.center;
+                //旋转动画
+                [UIView animateWithDuration:[[UIApplication sharedApplication] statusBarOrientationAnimationDuration] animations:^{
+                    ws.view.transform = CGAffineTransformIdentity;
+                    ws.view.frame = _landscapeViewController.view.bounds;
+                }completion:^(BOOL finished) {
+                    //            [[UIApplication sharedApplication] setStatusBarHidden:NO];
+                }];
             }];
-        }];
-    }
+        }
+    });
 }
 
 - (void)setPortraitController:(TTPlayerOrientation)fromOrientation{
@@ -194,37 +195,39 @@
         }
         return;
     }
-    if (!_parentView.viewController.hidesBottomBarWhenPushed) {
-        UITabBarController *tabBar = (UITabBarController *)[[UIApplication sharedApplication] keyWindow].rootViewController;
-        tabBar.tabBar.hidden = NO;
-    }
-    TT_WS(ws);
-    [_landscapeViewController dismissViewControllerAnimated:NO completion:^{
-        [self.view removeFromSuperview];
-        [self removeFromParentViewController];
-        [self.parentView.viewController addChildViewController:self];
-        [self.parentView addSubview:self.view];
-        [[UIApplication sharedApplication] setStatusBarHidden:NO];
-        //        [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationPortrait animated:NO];
-        [self.playerView setPortraitLayout];
-        //缩放动画
-        CGAffineTransform transform = CGAffineTransformMakeScale(1.0, 1.0);
-        ws.view.transform = transform;
-        ws.view.frame = _frame;
-        ws.view.transform = CGAffineTransformRotate(transform, angle);
-        
-        [UIView animateWithDuration:[[UIApplication sharedApplication] statusBarOrientationAnimationDuration]
-                         animations:^{
-                             ws.view.transform = CGAffineTransformIdentity;
-                         }
-                         completion:^(BOOL finished) {
-                             ws.view.frame = _frame;
-                             ws.isFullScreen = NO;
-                             if (completion) {
-                                 completion();
+    dispatch_async(dispatch_get_main_queue(), ^{        
+        if (!_parentView.viewController.hidesBottomBarWhenPushed) {
+            UITabBarController *tabBar = (UITabBarController *)[[UIApplication sharedApplication] keyWindow].rootViewController;
+            tabBar.tabBar.hidden = NO;
+        }
+        TT_WS(ws);
+        [_landscapeViewController dismissViewControllerAnimated:NO completion:^{
+            [self.view removeFromSuperview];
+            [self removeFromParentViewController];
+            [self.parentView.viewController addChildViewController:self];
+            [self.parentView addSubview:self.view];
+            [[UIApplication sharedApplication] setStatusBarHidden:NO];
+            //        [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationPortrait animated:NO];
+            [self.playerView setPortraitLayout];
+            //缩放动画
+            CGAffineTransform transform = CGAffineTransformMakeScale(1.0, 1.0);
+            ws.view.transform = transform;
+            ws.view.frame = _frame;
+            ws.view.transform = CGAffineTransformRotate(transform, angle);
+            
+            [UIView animateWithDuration:[[UIApplication sharedApplication] statusBarOrientationAnimationDuration]
+                             animations:^{
+                                 ws.view.transform = CGAffineTransformIdentity;
                              }
-                         }];
-    }];
+                             completion:^(BOOL finished) {
+                                 ws.view.frame = _frame;
+                                 ws.isFullScreen = NO;
+                                 if (completion) {
+                                     completion();
+                                 }
+                             }];
+        }];
+    });
 }
 
 #pragma mark -

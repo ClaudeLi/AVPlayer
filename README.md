@@ -3,6 +3,7 @@
 
         类似效果
         ![](https://github.com/ClaudeLi/AVPlayer/blob/master/20141121215131793.png)
+
         ![](https://github.com/ClaudeLi/AVPlayer/blob/master/20141121215205505.png)
 
         1.旋转至全屏
