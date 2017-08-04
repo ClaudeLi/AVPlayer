@@ -13,6 +13,7 @@
 #import "TTAVPlayerGestureView.h"
 #import "NSString+TTPlayer.h"
 #import "TTPlayerManager.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface TTAVPlayerView ()<UIAlertViewDelegate>
 
@@ -25,9 +26,24 @@
 @property (nonatomic, strong) TTAVPlayer *player;
 @property (nonatomic, strong) TTAVPlayerGestureView *gestureView;
 
+@property (nonatomic, strong) MPVolumeView *volumeView;
+
 @end
 
 @implementation TTAVPlayerView
+
+- (MPVolumeView *)volumeView {
+    if (_volumeView == nil) {
+        _volumeView  = [[MPVolumeView alloc] init];
+        _volumeView.showsRouteButton = YES;
+        _volumeView.showsVolumeSlider = NO;
+        [_volumeView sizeToFit];
+        [_volumeView setRouteButtonImage:[UIImage imageNamed:@"TTPlayerIcon_small_sweep"] forState:UIControlStateNormal];
+        [self.airPlayView addSubview:_volumeView];
+        _volumeView.frame = self.airPlayView.bounds;
+    }
+    return _volumeView;
+}
 
 - (TTAVPlayerGestureView *)gestureView{
     if (_gestureView == nil) {
@@ -72,6 +88,7 @@
         [self insertSubview:self.player atIndex:0];
         [self.carrierView insertSubview:self.gestureView atIndex:0];
         [self _initial];
+        self.volumeView.hidden = NO;
         _isBack = YES;
     }
     return self;

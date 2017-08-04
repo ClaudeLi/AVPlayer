@@ -45,7 +45,7 @@
     self.isLandscape = NO;
     [self setSwitchLayoutHidden:YES];
     TT_WS(ws);
-    self.sweepRight.constant = 10.0f;
+    self.airPlayRight.constant = 10.0f;
     self.bottomViewHeight.constant = 30.0f;
     self.timeLabelLeft.constant = 35.0f;
     [self.playBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -78,7 +78,7 @@
     self.isLandscape = YES;
     [self setSwitchLayoutHidden:NO];
     TT_WS(ws);
-    self.sweepRight.constant = 110.0f;
+    self.airPlayRight.constant = 110.0f;
     self.bottomViewHeight.constant = 44.0f;
     self.timeLabelLeft.constant = 15.0f;
     [self.totalLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -161,12 +161,12 @@
 
 - (void)setBarHidden:(BOOL)hidden{
     if (self.isLandscape) {
-        self.sweepBtn.hidden = hidden;
+        self.airPlayView.hidden = hidden;
         self.topView.hidden = hidden;
     }else{
         self.topView.hidden = YES;
         if (self.type == TTAVPlayerTypeListPlayer) {
-            self.sweepBtn.hidden = YES;
+            self.airPlayView.hidden = YES;
         }
     }
     self.bottomView.hidden = hidden;

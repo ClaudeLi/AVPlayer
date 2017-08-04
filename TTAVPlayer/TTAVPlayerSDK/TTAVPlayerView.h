@@ -31,7 +31,7 @@ typedef NS_ENUM(NSInteger, TTAVPlayerType) {
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UIButton *lockBtn;
-@property (weak, nonatomic) IBOutlet UIButton *sweepBtn;
+@property (weak, nonatomic) IBOutlet UIView *airPlayView;
 @property (weak, nonatomic) IBOutlet UIButton *shareBtn;
 
 @property (weak, nonatomic) IBOutlet UIButton *rotateBtn;
@@ -51,7 +51,7 @@ typedef NS_ENUM(NSInteger, TTAVPlayerType) {
 @property (weak, nonatomic) IBOutlet UIImageView *loadingView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomViewHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *timeLabelLeft;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *sweepRight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *airPlayRight;
 @property (weak, nonatomic) IBOutlet UILabel *tipsView;
 
 @property (nonatomic, assign, readonly) BOOL isLock;    // 是否锁屏

@@ -240,6 +240,7 @@
 				TargetAttributes = {
 					D31C9EFC1E0930E5009A0B05 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = H6FCNRM4Z4;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -470,10 +471,11 @@
 			baseConfigurationReference = 6D2FDD10BC3C1452F315E34D /* Pods-TTAVPlayer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = H6FCNRM4Z4;
 				INFOPLIST_FILE = TTAVPlayer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.claudeli.TTAVPlayer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.claudeli.clplayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -483,10 +485,11 @@
 			baseConfigurationReference = 91D3492866FADEDB40684A56 /* Pods-TTAVPlayer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = H6FCNRM4Z4;
 				INFOPLIST_FILE = TTAVPlayer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.claudeli.TTAVPlayer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.claudeli.clplayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

@@ -138,8 +138,11 @@
             _isFullScreen = YES;
             _parentView.viewController.view.hidden = YES;
             if (!_parentView.viewController.hidesBottomBarWhenPushed) {
-                UITabBarController *tabBar = (UITabBarController *)[[UIApplication sharedApplication] keyWindow].rootViewController;
-                tabBar.tabBar.hidden = YES;
+                UIViewController *rootVC = [[UIApplication sharedApplication] keyWindow].rootViewController;
+                if ([rootVC isKindOfClass:[UITabBarController class]]) {
+                    UITabBarController *tabBar = (UITabBarController *)rootVC;
+                    tabBar.tabBar.hidden = YES;
+                }
             }
             _landscapeViewController.orientation = toOrientation;
             [[UIApplication sharedApplication] keyWindow].backgroundColor = [UIColor blackColor];
@@ -197,8 +200,11 @@
     }
     dispatch_async(dispatch_get_main_queue(), ^{        
         if (!_parentView.viewController.hidesBottomBarWhenPushed) {
-            UITabBarController *tabBar = (UITabBarController *)[[UIApplication sharedApplication] keyWindow].rootViewController;
-            tabBar.tabBar.hidden = NO;
+            UIViewController *rootVC = [[UIApplication sharedApplication] keyWindow].rootViewController;
+            if ([rootVC isKindOfClass:[UITabBarController class]]) {
+                UITabBarController *tabBar = (UITabBarController *)rootVC;
+                tabBar.tabBar.hidden = NO;
+            }
         }
         TT_WS(ws);
         [_landscapeViewController dismissViewControllerAnimated:NO completion:^{
