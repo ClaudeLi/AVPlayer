@@ -1,5 +1,5 @@
 # AVPlayer
-视频播放器，基于AVFoundation框架，实现类似腾讯视频的全屏播放及小屏播放 
+视频播放，实现全屏播放及小屏播放 
 
         类似效果
         ![](https://github.com/ClaudeLi/AVPlayer/blob/master/20141121215131793.png)
